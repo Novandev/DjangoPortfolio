@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ object.name }} - {{ block.super }}
+{% endblock %}
+
+{% block main %}
+<h1>{{ object }}</h1>
+<p class="lead">
+{{ object.description }}
+</p>
+{% endblock %}
+
+{% block sidebar %}
+<div>
+Technologies used:
+  <span class="badge badge-primary">
+  {{ object.technologies_used }}
+  </span>
+</div>
+{% endblock %}
