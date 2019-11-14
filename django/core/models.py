@@ -53,6 +53,13 @@ class Project(models.Model):
     def __str__(self):
         return 'name: {}\n description:{}\n languages: {}\n technologies_used: {}\n github_link:{}\n live_link:{} '.format(self.name, self.description, self.languages,self.technologies_used,self.github_link,self.live_link)
 
+
+
+class Like(models.Model):
+    created
+
+
+
 # new_project = Project.objects.create(
 # name="project1",
 #  description="an apt description",
