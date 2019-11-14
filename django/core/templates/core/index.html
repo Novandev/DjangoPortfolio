@@ -5,7 +5,7 @@ Novan Adams - Data Scientist / Software Engineer
 {% block main %}
     <ul>
       {% for project in object_list %}
-        <li>{{ project }}</li>
+        <li>{{ project.name }}</li>
       {% empty %}
         <li>
           No movies yet.
