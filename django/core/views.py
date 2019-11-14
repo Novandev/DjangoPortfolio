@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Project.objects.all()
+        return {'projects':Project.objects.all(),'jobs':Job.objects.all()}
 # class ProjectList(ListView):
 #     model = Project
 

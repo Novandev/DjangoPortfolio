@@ -11,4 +11,7 @@ urlpatterns = [
     path('projects/<int:pk>',
         views.ProjectDetail.as_view(),
         name='ProjectDetail'),
+    path('jobs/<int:pk>',
+        views.JobDetail.as_view(),
+        name='JobDetail'),
 ]
