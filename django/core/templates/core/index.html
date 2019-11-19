@@ -3,7 +3,15 @@
 Novan Adams - Data Scientist / Software Engineer
 {% endblock %}
 {% block main %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
 
+<section>
+    <img src="https://storage.cloud.google.com/novan-portfolio/20190606_184152.jpg" class="profile-pic" >
+  <h1>Novan Adams</h1>
+</section>
   <section>
     <h2>Projects</h2>
       <ul>
@@ -27,7 +35,7 @@ Novan Adams - Data Scientist / Software Engineer
             <li><a href="{% url 'core:JobDetail' pk=job.id %}">{{ job.location }}</a></li>
             
           {% empty %}
-            <li>bbnbn,mnbnm,
+            <li>
               <h2>Jobs not loaded.</h2>
               <p>Please try again later</p>
             </li>

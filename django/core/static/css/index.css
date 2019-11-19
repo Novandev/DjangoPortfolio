@@ -1,0 +1,5 @@
+.profile-pic{
+    width:640px;
+    height:480px;
+    transform: rotate(-90deg);
+}
