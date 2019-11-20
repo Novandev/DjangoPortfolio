@@ -25,9 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = 'b3pi2o$ev%ylt-i59silqj2guryzpcyuv6a5g85k4s^7(dmccr'
 SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.getenv('DEBUG', 'NO').lower() in ('on', 'true', 'y', 'yes')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -72,6 +73,7 @@ TEMPLATES = [
     },
 ]
 
+# WSGI_APPLICATION = 'django_project.wsgi.application'
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -84,7 +86,7 @@ DATABASES = {
         'NAME':  os.getenv('NAME'),
         'USER':  os.getenv('USER'),
         'PASSWORD':  os.getenv('PASSWORD'),
-        'HOST':  '127.0.0.1',
+        'HOST':  os.getenv('HOST'),
         'PORT':  os.getenv('PORT'),
     }
 }
