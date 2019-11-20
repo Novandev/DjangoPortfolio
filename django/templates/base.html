@@ -15,6 +15,7 @@
   <title >
     {% block title %}Novan Adams{% endblock %}
   </title>
+  {% load static %}
   <style>
     .mymdb-masthead {
       background-color: #EEEEEE;
@@ -27,7 +28,7 @@
 <div class="mymdb-masthead">
   <div class="container">
     <nav class="nav">
-      <div class="navbar-brand">Novan Adams</div>
+      <div class="navbar-brand"><a href="/">Novan Adams</a></div>
       <!-- <a
         class="nav-link"
         href="{% url 'core:index' %}"
