@@ -10,7 +10,7 @@ services:
       - postgres:postgres
       - redis:redis
     volumes:
-      - web-django:/usr/src/app
+      # - web-django:/usr/src/app
       - web-static:/usr/src/app/static
     env_file: .env
     environment:
@@ -26,6 +26,8 @@ services:
       - web-static:/www/static
     links:
       - web:web
+    depends_on:
+      - web
 
   postgres:
     restart: always
