@@ -16,7 +16,7 @@ load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  os.getenv('NAME'),
-        'USER':  os.getenv('USER'),
-        'PASSWORD':  os.getenv('PASSWORD'),
-        'HOST':  os.getenv('HOST'),
-        'PORT':  os.getenv('PORT'),
+        'NAME':  os.getenv('DB_NAME'),
+        'USER':  os.getenv('DB_USER'),
+        'PASSWORD':  os.getenv('DB_PASS'),
+        'HOST':  os.getenv('DB_SERVICE'),
+        'PORT':  os.getenv('DB_PORT'),
     }
 }
 # Password validation
@@ -129,6 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
