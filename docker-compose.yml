@@ -10,8 +10,8 @@ services:
       - postgres:postgres
       - redis:redis
     volumes:
-      # - web-django:/usr/src/app
-      - web-static:/usr/src/app/static
+      - web_django:/usr/src/app
+      - web_static:/usr/src/app/static
     env_file: .env
     environment:
       DEBUG: 'true'
@@ -23,7 +23,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - web-static:/www/static
+      - web_static:/www/static
     links:
       - web:web
     depends_on:
@@ -50,7 +50,7 @@ services:
       - redisdata:/data
 
 volumes:
-  web-django:
-  web-static:
+  web_django:
+  web_static:
   pgdata:
   redisdata:
