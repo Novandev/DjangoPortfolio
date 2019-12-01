@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from projects.models import Project
+from django.views.generic import TemplateView
+
+
+class HomePageView(TemplateView):
+    # template_name = 'project_index.html'
+    def get(self, request):
+        projects = Project.objects.all()
+        context = {
+            'projects': projects
+        }
+        return render(request, 'home.html', context)
 # Create your views here.
 
 
-def project_index(request):
+def index(request):
     projects = Project.objects.all()
     context = {
         'projects': projects
